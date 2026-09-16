@@ -163,7 +163,7 @@ body::after {
   animation: spin 8s linear infinite;
   box-shadow: 0 0 60px -10px rgba(139, 92, 246, .7), 0 0 120px -30px rgba(34, 211, 238, .6);
 }
-.avatar { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; border-radius: 50%; border: 5px solid var(--bg); animation: spin 8s linear infinite reverse; }
+.avatar { width: 100%; height: 100%; object-fit: cover; object-position: center; border-radius: 50%; border: 5px solid var(--bg); animation: spin 8s linear infinite reverse; }
 @keyframes spin { to { transform: rotate(360deg); } }
 .orbit { position: absolute; border-radius: 50%; border: 1px dashed rgba(140, 160, 255, .2); }
 .orbit-1 { inset: 4%; animation: spin 24s linear infinite; }

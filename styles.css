@@ -443,3 +443,6 @@ h3 { font-family: var(--font-display); letter-spacing: -.01em; }
   .project.featured:nth-child(even) { flex-direction: column; }
   .project.featured:nth-child(even) .project-visual { border-left: 0; border-bottom: 1px solid var(--border); }
 }
+.org-link, .inline-link { color: var(--cyan); transition: color .2s; }
+.org-link:hover, .inline-link:hover { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+.tl-cta { margin-top: 1.2rem; }

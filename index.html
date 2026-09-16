@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Muhammad Ishaq — AI Engineer</title>
+  <meta name="description" content="Muhammad Ishaq — AI Engineer building RAG pipelines, Generative AI systems, knowledge graphs and computer vision solutions." />
+  <meta name="theme-color" content="#05060f" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <canvas id="neural-bg" aria-hidden="true"></canvas>
+  <div class="glow glow-1" aria-hidden="true"></div>
+  <div class="glow glow-2" aria-hidden="true"></div>
+  <div class="cursor-glow" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <a href="#home" class="logo"><span class="logo-mark">MI</span><span class="logo-dot"></span></a>
+    <nav>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span></button>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact" class="btn btn-sm btn-ghost">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero-text">
+        <div class="status-pill reveal"><span class="pulse"></span> Open to AI Engineering roles</div>
+        <h1 class="reveal">
+          Hi, I'm <span class="gradient-text">Muhammad Ishaq</span>
+        </h1>
+        <p class="hero-role reveal">
+          <span class="mono prompt">&gt;</span>
+          <span id="typed" class="mono"></span><span class="caret">▍</span>
+        </p>
+        <p class="hero-sub reveal">
+          I build intelligent systems powered by deep learning, language understanding and Generative AI —
+          from reliable RAG pipelines and knowledge graphs to multilingual, voice-enabled assistants shipped to production.
+        </p>
+        <div class="hero-cta reveal">
+          <a href="#projects" class="btn btn-primary">View Projects <span aria-hidden="true">→</span></a>
+          <a href="assets/Muhammad_Ishaq_CV.pdf" class="btn btn-ghost" download>Download CV</a>
+        </div>
+        <div class="socials reveal">
+          <a href="https://github.com/MuhammadIshaq-AI" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.56-.29-5.25-1.28-5.25-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.23 2.75.11 3.04.74.81 1.19 1.83 1.19 3.09 0 4.41-2.7 5.38-5.27 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/muhammad-i-165a37a0/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
+          </a>
+          <a href="mailto:ishaqjan619@gmail.com" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal">
+        <div class="avatar-wrap">
+          <div class="orbit orbit-1"><span></span></div>
+          <div class="orbit orbit-2"><span></span></div>
+          <div class="avatar-ring">
+            <img src="assets/profile.png" alt="Portrait of Muhammad Ishaq" class="avatar" />
+          </div>
+          <div class="chip chip-1 mono">RAG · LangChain</div>
+          <div class="chip chip-2 mono">AI Agents · AWS</div>
+          <div class="chip chip-3 mono">YOLO26 · ViT</div>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-hint" aria-label="Scroll down"><span></span></a>
+    </section>
+
+    <!-- ABOUT / STATS -->
+    <section class="section" id="about">
+      <div class="section-head reveal">
+        <span class="eyebrow mono">01 // about</span>
+        <h2>From idea to launch, <span class="gradient-text">end to end.</span></h2>
+      </div>
+      <div class="about-grid">
+        <div class="glass about-card reveal">
+          <p>
+            I'm an <strong>AI Engineer</strong> based in <strong>Islamabad, Pakistan</strong>, focused on building smart systems
+            that actually make it to production. My work spans <strong>Retrieval-Augmented Generation</strong>, knowledge graphs,
+            conversational AI with multilingual and voice capabilities, and <strong>computer vision</strong> pipelines.
+          </p>
+          <p>
+            As <strong>Co-Founder of AI Cortexo</strong>, I lead the technical vision for a platform that lets businesses launch AI agents,
+            workflows and RAG systems with minimal engineering effort.
+          </p>
+          <p>
+            Before that I led an AI &amp; Data Science team, mentored junior engineers, and designed cloud-native ML architectures on
+            <strong>AWS</strong> — Bedrock, SageMaker, Glue, ECS and EKS — always with an eye on latency, reliability and cost.
+          </p>
+          <div class="terminal mono">
+            <div class="terminal-bar"><i></i><i></i><i></i><span>ishaq@ai: ~</span></div>
+            <pre><span class="t-c">$</span> whoami
+<span class="t-o">co_founder · ai_engineer · team_lead · MS CS</span>
+<span class="t-c">$</span> cat focus.txt
+<span class="t-o">[ "GenAI", "RAG", "Knowledge Graphs", "NLP", "Computer Vision" ]</span>
+<span class="t-c">$</span> languages --spoken
+<span class="t-o">English · Urdu · Pashto</span></pre>
+          </div>
+        </div>
+        <div class="stats">
+          <div class="glass stat reveal"><span class="stat-num" data-count="85" data-suffix="%">0</span><span class="stat-label">Reduction in AI retrieval latency with knowledge graphs</span></div>
+          <div class="glass stat reveal"><span class="stat-num" data-count="99.9" data-suffix="%" data-decimals="1">0</span><span class="stat-label">Uptime for production RAG pipelines</span></div>
+          <div class="glass stat reveal"><span class="stat-num" data-count="25" data-suffix="%">0</span><span class="stat-label">Operational cost cut via inference optimisation</span></div>
+          <div class="glass stat reveal"><span class="stat-num" data-count="3" data-suffix="+">0</span><span class="stat-label">Years shipping production AI systems</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section" id="experience">
+      <div class="section-head reveal">
+        <span class="eyebrow mono">02 // experience</span>
+        <h2>Where I've <span class="gradient-text">built things.</span></h2>
+      </div>
+
+      <div class="timeline">
+        <article class="tl-item reveal">
+          <div class="tl-node tl-node-live"></div>
+          <div class="glass tl-card">
+            <div class="tl-top">
+              <div>
+                <h3>Co-Founder</h3>
+                <p class="tl-org">AI Cortexo · Islamabad <span class="tag">Hybrid</span> <span class="tag">Part-time</span></p>
+              </div>
+              <span class="tl-date mono">Jun 2025 — Present</span>
+            </div>
+            <p class="tl-lead">Leading the technical vision and product development for an AI platform that lets businesses build, deploy and scale AI-powered applications with minimal engineering effort — enterprise-grade infrastructure for AI agents, workflow automation, RAG and intelligent business operations.</p>
+            <ul>
+              <li>Architected and built the <strong>AI Cortexo Platform (AIP)</strong>, enabling organisations to launch AI agents, AI workflows and intelligent automations from one unified platform.</li>
+              <li>Designed <strong>multi-agent orchestration</strong> systems supporting autonomous task execution and enterprise workflows.</li>
+              <li>Built scalable RAG pipelines powering enterprise document intelligence.</li>
+              <li>Developed production-ready AI infrastructure with Python, FastAPI, Docker, PostgreSQL, Redis and AWS.</li>
+              <li>Integrated OpenAI, Anthropic and open-source LLMs into enterprise workflows with <strong>intelligent model routing</strong> and cost optimisation.</li>
+              <li>Implemented authentication, usage tracking, API management and scalable cloud deployment pipelines.</li>
+              <li>Led product architecture, engineering strategy and AI research from concept to production, working directly with clients to automate business processes.</li>
+            </ul>
+            <div class="pills"><span>AI Agents</span><span>Multi-Agent Orchestration</span><span>RAG</span><span>FastAPI</span><span>PostgreSQL</span><span>Redis</span><span>Docker</span><span>AWS</span><span>LLM Routing</span></div>
+          </div>
+        </article>
+
+        <article class="tl-item reveal">
+          <div class="tl-node"></div>
+          <div class="glass tl-card">
+            <div class="tl-top">
+              <div>
+                <h3>AI Engineer</h3>
+                <p class="tl-org">Ventive LLC · Boise, ID <span class="tag">Remote</span></p>
+              </div>
+              <span class="tl-date mono">Nov 2025 — Mar 2026</span>
+            </div>
+            <ul>
+              <li>Built and deployed scalable AI and data systems, including NLP-powered intelligent chatbots and automated data pipelines on AWS.</li>
+              <li>Designed cloud data architectures with AWS Glue and Bedrock, using Docker-based deployments for production.</li>
+              <li>Developed and optimised ETL workflows to process large-scale enterprise data for analytics and AI use cases.</li>
+              <li>Engineered knowledge graphs to model complex entity relationships, <strong>reducing AI retrieval latency by up to 85%</strong> while maintaining high accuracy.</li>
+            </ul>
+            <div class="pills"><span>AWS Bedrock</span><span>AWS Glue</span><span>Knowledge Graphs</span><span>Docker</span><span>ETL</span></div>
+          </div>
+        </article>
+
+        <article class="tl-item reveal">
+          <div class="tl-node"></div>
+          <div class="glass tl-card">
+            <div class="tl-top">
+              <div>
+                <h3>Team Lead — AI &amp; Data Science</h3>
+                <p class="tl-org">Octans Digital · Islamabad</p>
+              </div>
+              <span class="tl-date mono">Sep 2024 — May 2025</span>
+            </div>
+            <ul>
+              <li>Led the AI/Data Science team driving development of scalable Generative AI and SaaS applications.</li>
+              <li>Built and deployed RAG pipelines with LangChain and AWS Bedrock, achieving <strong>99.9% uptime</strong> and sub-second retrieval latency.</li>
+              <li>Designed inference optimisation strategies that <strong>cut operational costs by 25%</strong> while improving throughput.</li>
+              <li>Mentored junior engineers and apprentices, establishing structured practices for GenAI SaaS products.</li>
+            </ul>
+            <div class="pills"><span>LangChain</span><span>RAG</span><span>AWS Bedrock</span><span>Leadership</span><span>SaaS</span></div>
+          </div>
+        </article>
+
+        <article class="tl-item reveal">
+          <div class="tl-node"></div>
+          <div class="glass tl-card">
+            <div class="tl-top">
+              <div>
+                <h3>Associate AI Engineer</h3>
+                <p class="tl-org">Octans Digital · Islamabad</p>
+              </div>
+              <span class="tl-date mono">Mar 2023 — Sep 2024</span>
+            </div>
+            <ul>
+              <li>Designed and deployed Generative AI solutions using state-of-the-art LLMs and AWS SageMaker for fine-tuning and inference.</li>
+              <li>Built multilingual NLP systems and computer vision pipelines focused on automation, accuracy and scale.</li>
+              <li>Developed AI chatbots, speech-to-text pipelines and intelligent document processing systems for enterprise workflows.</li>
+              <li>Implemented end-to-end ML workflows — data processing, training, deployment and monitoring — on ECS and EKS.</li>
+            </ul>
+            <div class="pills"><span>SageMaker</span><span>LLM Fine-tuning</span><span>Speech-to-Text</span><span>ECS / EKS</span><span>CV</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+      <div class="section-head reveal">
+        <span class="eyebrow mono">03 // projects</span>
+        <h2>Selected <span class="gradient-text">work.</span></h2>
+        <p class="section-sub">A few systems I've designed and shipped across research and industry.</p>
+      </div>
+
+      <div class="filters reveal" role="tablist">
+        <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter="genai">GenAI &amp; NLP</button>
+        <button class="filter" data-filter="cv">Computer Vision</button>
+        <button class="filter" data-filter="data">Data &amp; Cloud</button>
+      </div>
+
+      <div class="projects-grid">
+        <article class="glass project featured reveal" data-cat="genai">
+          <div class="project-visual visual-agents" aria-hidden="true">
+            <svg viewBox="0 0 320 220">
+              <g class="edges">
+                <line x1="160" y1="110" x2="70" y2="50"/><line x1="160" y1="110" x2="250" y2="50"/>
+                <line x1="160" y1="110" x2="60" y2="170"/><line x1="160" y1="110" x2="260" y2="170"/>
+                <line x1="70" y1="50" x2="250" y2="50"/><line x1="60" y1="170" x2="260" y2="170"/>
+              </g>
+              <circle class="core-ring" cx="160" cy="110" r="34"/>
+              <circle class="core" cx="160" cy="110" r="24"/>
+              <text x="160" y="114" class="core-label">AIP</text>
+              <g class="agent"><rect x="30" y="36" width="80" height="28" rx="8"/><text x="70" y="54">Agent</text></g>
+              <g class="agent"><rect x="210" y="36" width="80" height="28" rx="8"/><text x="250" y="54">RAG</text></g>
+              <g class="agent"><rect x="14" y="156" width="92" height="28" rx="8"/><text x="60" y="174">Workflow</text></g>
+              <g class="agent"><rect x="214" y="156" width="92" height="28" rx="8"/><text x="260" y="174">LLM Router</text></g>
+            </svg>
+          </div>
+          <div class="project-body">
+            <span class="project-kicker mono">Co-Founder · AI Cortexo</span>
+            <h3>AI Cortexo Platform (AIP)</h3>
+            <p>An enterprise platform for launching <strong>AI agents</strong>, AI workflows and intelligent automations from one place. It combines multi-agent orchestration for autonomous task execution, RAG-based document intelligence, and <strong>intelligent routing</strong> across OpenAI, Anthropic and open-source LLMs for cost-efficient inference. Auth, usage tracking and API management come built in.</p>
+            <div class="pills"><span>Multi-Agent Systems</span><span>RAG</span><span>FastAPI</span><span>PostgreSQL</span><span>Redis</span><span>Docker</span><span>AWS</span></div>
+          </div>
+        </article>
+
+        <article class="glass project featured reveal" data-cat="cv">
+          <div class="project-visual visual-cv" aria-hidden="true">
+            <div class="bbox b1"><span class="mono">hole 0.94</span></div>
+            <div class="bbox b2"><span class="mono">stain 0.89</span></div>
+            <div class="bbox b3"><span class="mono">tear 0.91</span></div>
+            <div class="scanline"></div>
+          </div>
+          <div class="project-body">
+            <span class="project-kicker mono">MS Thesis · FAST University</span>
+            <h3>Fabric DefectAI</h3>
+            <p>Automated fabric fault detection combining a fine-tuned <strong>YOLO26</strong> detector with <strong>Vision Transformers</strong>. Built a custom-annotated dataset, applied advanced augmentation and hyperparameter optimisation, and fused ViT features into CNN pipelines for more robust detection — replacing slow manual inspection.</p>
+            <div class="pills"><span>YOLO26</span><span>Vision Transformers</span><span>Deep Learning</span><span>Data Augmentation</span></div>
+            <div class="project-links">
+              <a href="https://github.com/MuhammadIshaq-AI" target="_blank" rel="noopener">GitHub ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="glass project featured reveal" data-cat="genai">
+          <div class="project-visual visual-graph" aria-hidden="true">
+            <svg viewBox="0 0 200 110">
+              <g class="edges"><line x1="40" y1="30" x2="100" y2="55"/><line x1="100" y1="55" x2="160" y2="25"/><line x1="100" y1="55" x2="150" y2="90"/><line x1="40" y1="30" x2="55" y2="90"/><line x1="55" y1="90" x2="100" y2="55"/><line x1="160" y1="25" x2="150" y2="90"/></g>
+              <g class="nodes"><circle cx="40" cy="30" r="6"/><circle cx="100" cy="55" r="9"/><circle cx="160" cy="25" r="6"/><circle cx="150" cy="90" r="5"/><circle cx="55" cy="90" r="5"/></g>
+            </svg>
+          </div>
+          <div class="project-body">
+            <span class="project-kicker mono">Ventive LLC</span>
+            <h3>Knowledge-Graph Retrieval</h3>
+            <p>Engineered knowledge graphs that model complex entity relationships across enterprise data, giving AI retrieval a structured map to traverse instead of brute-force search. The result: retrieval latency cut by up to <strong>85%</strong> while keeping answers highly accurate. Built on AWS alongside Glue-powered data pipelines.</p>
+            <div class="pills"><span>Knowledge Graphs</span><span>RAG</span><span>AWS</span></div>
+          </div>
+        </article>
+
+        <article class="glass project reveal" data-cat="genai">
+          <div class="project-visual visual-rag mono" aria-hidden="true">
+            <span>query</span><i>→</i><span>embed</span><i>→</i><span>retrieve</span><i>→</i><span class="hl">LLM</span>
+          </div>
+          <div class="project-body">
+            <span class="project-kicker mono">Octans Digital</span>
+            <h3>Enterprise RAG Platform</h3>
+            <p>Production RAG pipelines on LangChain and AWS Bedrock serving GenAI SaaS products with <strong>99.9% uptime</strong> and sub-second retrieval, plus inference optimisations saving 25% in cost.</p>
+            <div class="pills"><span>LangChain</span><span>AWS Bedrock</span><span>Docker</span></div>
+          </div>
+        </article>
+
+        <article class="glass project reveal" data-cat="genai">
+          <div class="project-visual visual-wave" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <div class="project-body">
+            <span class="project-kicker mono">Octans Digital</span>
+            <h3>Multilingual Voice Assistant</h3>
+            <p>Conversational AI with multilingual understanding, speech-to-text pipelines and smooth voice output, built to automate enterprise support workflows.</p>
+            <div class="pills"><span>Speech-to-Text</span><span>NLP</span><span>LLMs</span><span>TTS</span></div>
+          </div>
+        </article>
+
+        <article class="glass project reveal" data-cat="genai">
+          <div class="project-visual visual-doc" aria-hidden="true">
+            <div class="doc"><i></i><i></i><i class="short"></i><i></i><i class="short"></i></div>
+            <div class="doc-arrow mono">{ json }</div>
+          </div>
+          <div class="project-body">
+            <span class="project-kicker mono">Octans Digital</span>
+            <h3>Intelligent Document Processing</h3>
+            <p>LLM-driven extraction and classification of enterprise documents into structured data, streamlining manual, error-prone back-office processes.</p>
+            <div class="pills"><span>LLMs</span><span>SageMaker</span><span>NLP</span></div>
+          </div>
+        </article>
+
+        <article class="glass project reveal" data-cat="data">
+          <div class="project-visual visual-pipe" aria-hidden="true">
+            <div class="pipe-node mono">Data</div><div class="pipe-line"><b></b></div><div class="pipe-node mono">Glue</div><div class="pipe-line"><b></b></div><div class="pipe-node mono">AI</div>
+          </div>
+          <div class="project-body">
+            <span class="project-kicker mono">Ventive LLC</span>
+            <h3>Cloud ETL &amp; Data Pipelines</h3>
+            <p>Cloud-native data architecture with AWS Glue and Docker deployments, processing large-scale enterprise data for analytics and downstream AI.</p>
+            <div class="pills"><span>AWS Glue</span><span>Docker</span><span>ETL</span><span>Python</span></div>
+          </div>
+        </article>
+
+        <article class="glass project reveal" data-cat="cv">
+          <div class="project-visual visual-face" aria-hidden="true">
+            <div class="face-box"><span class="mono">ID #042 ✓</span></div>
+          </div>
+          <div class="project-body">
+            <span class="project-kicker mono">BS · HITEC University</span>
+            <h3>Vision-Based Attendance System</h3>
+            <p>Object-detection powered attendance with real-time identification and automatic record generation, replacing manual marking.</p>
+            <div class="pills"><span>Object Detection</span><span>Computer Vision</span><span>Real-time CV</span></div>
+          </div>
+        </article>
+
+        <article class="glass project reveal" data-cat="data">
+          <div class="project-visual visual-inv mono" aria-hidden="true">
+            <div class="inv-row"><span>SKU-1182</span><span class="ok">in stock</span></div>
+            <div class="inv-row"><span>SKU-0457</span><span class="warn">low</span></div>
+            <div class="inv-row"><span>SKU-2210</span><span class="ok">in stock</span></div>
+          </div>
+          <div class="project-body">
+            <span class="project-kicker mono">BS Final Year Project</span>
+            <h3>Defense Inventory Management</h3>
+            <p>Web-based system digitising data entry, tracking and retrieval for a defense-sector client — secure, structured and built to replace legacy manual workflows.</p>
+            <div class="pills"><span>C#</span><span>ASP.NET</span><span>Web Forms</span></div>
+          </div>
+        </article>
+      </div>
+
+      <div class="more reveal">
+        <a href="https://github.com/MuhammadIshaq-AI" target="_blank" rel="noopener" class="btn btn-ghost">More on GitHub ↗</a>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section" id="skills">
+      <div class="section-head reveal">
+        <span class="eyebrow mono">04 // stack</span>
+        <h2>Tools of the <span class="gradient-text">trade.</span></h2>
+      </div>
+      <div class="skills-grid">
+        <div class="glass skill-card reveal">
+          <div class="skill-icon">✦</div>
+          <h3>Generative AI</h3>
+          <div class="pills"><span>LLMs</span><span>AI Agents</span><span>Multi-Agent Orchestration</span><span>RAG</span><span>LangChain</span><span>LLM Routing</span><span>Prompt Engineering</span><span>Fine-tuning</span><span>Knowledge Graphs</span><span>Chatbots</span></div>
+        </div>
+        <div class="glass skill-card reveal">
+          <div class="skill-icon">◎</div>
+          <h3>ML &amp; Vision</h3>
+          <div class="pills"><span>Deep Learning</span><span>NLP</span><span>YOLO26</span><span>Vision Transformers</span><span>CNNs</span><span>Speech-to-Text</span></div>
+        </div>
+        <div class="glass skill-card reveal">
+          <div class="skill-icon">☁</div>
+          <h3>Cloud &amp; MLOps</h3>
+          <div class="pills"><span>AWS Bedrock</span><span>SageMaker</span><span>AWS Glue</span><span>ECS</span><span>EKS</span><span>Docker</span><span>Kubernetes</span></div>
+        </div>
+        <div class="glass skill-card reveal">
+          <div class="skill-icon">⌘</div>
+          <h3>Languages &amp; Data</h3>
+          <div class="pills"><span>Python</span><span>FastAPI</span><span>Node.js</span><span>C#</span><span>PostgreSQL</span><span>Redis</span><span>ETL</span><span>Power BI</span><span>Tableau</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION & CERTS -->
+    <section class="section" id="education">
+      <div class="section-head reveal">
+        <span class="eyebrow mono">05 // education</span>
+        <h2>Learning, <span class="gradient-text">always.</span></h2>
+      </div>
+      <div class="edu-grid">
+        <div class="glass edu-card reveal">
+          <span class="tl-date mono">Apr 2022 — Aug 2024</span>
+          <h3>Master of Computer Science</h3>
+          <p class="tl-org">FAST University, Islamabad</p>
+          <p>Thesis: <em>Fabric DefectAI</em> — deep learning and computer vision for automated fabric fault detection with YOLO26 and Vision Transformers.</p>
+        </div>
+        <div class="glass edu-card reveal">
+          <span class="tl-date mono">Sep 2017 — Jul 2021</span>
+          <h3>Bachelor of Computer Science</h3>
+          <p class="tl-org">HITEC University, Taxila</p>
+          <p>Final year project: defense-sector inventory automation system, plus an object-detection based attendance system.</p>
+        </div>
+        <div class="glass edu-card certs reveal">
+          <h3>Certifications</h3>
+          <ul class="cert-list">
+            <li><span class="cert-dot"></span>AWS Certified Cloud Practitioner</li>
+            <li><span class="cert-dot"></span>Generative AI with Large Language Models</li>
+            <li><span class="cert-dot"></span>AWS Bedrock · ChatGPT Prompt Engineering for Developers</li>
+            <li><span class="cert-dot"></span>IBM — Introduction to Containers with Docker &amp; Kubernetes</li>
+            <li><span class="cert-dot"></span>IBM — Data Science Methodology &amp; Tools for Data Science</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact" id="contact">
+      <div class="glass contact-card reveal">
+        <span class="eyebrow mono">06 // contact</span>
+        <h2>Let's build something <span class="gradient-text">intelligent.</span></h2>
+        <p>Have a GenAI product, a RAG system that needs to be faster, or a vision problem to solve? My inbox is open.</p>
+        <a href="mailto:ishaqjan619@gmail.com" class="btn btn-primary btn-lg">ishaqjan619@gmail.com</a>
+        <div class="contact-links">
+          <a href="https://www.linkedin.com/in/muhammad-i-165a37a0/" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a href="https://github.com/MuhammadIshaq-AI" target="_blank" rel="noopener">GitHub ↗</a>
+          <a href="tel:+923318201165">+92 331 8201165</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer mono">
+    <span>© <span id="year"></span> Muhammad Ishaq</span>
+    <span>Islamabad, Pakistan · built with curiosity &amp; tensors</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

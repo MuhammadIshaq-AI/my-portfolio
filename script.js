@@ -325,6 +325,58 @@
     })
   );
 
+  /* ---------- Pointer niceties: tilt, magnetic buttons, cursor ring ---------- */
+  const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  if (finePointer && !reduceMotion) {
+    $$(".project, .skill-card, .stat").forEach((card) => {
+      card.classList.add("tilt");
+      const max = card.classList.contains("featured") ? 3 : 7;
+      card.addEventListener("pointermove", (e) => {
+        const r = card.getBoundingClientRect();
+        const px = (e.clientX - r.left) / r.width - 0.5;
+        const py = (e.clientY - r.top) / r.height - 0.5;
+        card.classList.add("tilting");
+        card.style.setProperty("--rx", `${(-py * max).toFixed(2)}deg`);
+        card.style.setProperty("--ry", `${(px * max).toFixed(2)}deg`);
+      });
+      card.addEventListener("pointerleave", () => {
+        card.classList.remove("tilting");
+        card.style.setProperty("--rx", "0deg");
+        card.style.setProperty("--ry", "0deg");
+      });
+    });
+
+    $$(".btn, .socials a").forEach((el) => {
+      el.classList.add("magnetic");
+      el.addEventListener("pointermove", (e) => {
+        const r = el.getBoundingClientRect();
+        const dx = e.clientX - (r.left + r.width / 2);
+        const dy = e.clientY - (r.top + r.height / 2);
+        el.style.translate = `${dx * 0.25}px ${dy * 0.35}px`;
+      });
+      el.addEventListener("pointerleave", () => (el.style.translate = ""));
+    });
+
+    const ring = document.createElement("div");
+    ring.className = "cursor-ring";
+    ring.setAttribute("aria-hidden", "true");
+    document.body.appendChild(ring);
+    const pos = { x: -100, y: -100, tx: -100, ty: -100 };
+    window.addEventListener("pointermove", (e) => {
+      pos.tx = e.clientX;
+      pos.ty = e.clientY;
+      ring.classList.add("on");
+      ring.classList.toggle("hover", !!e.target.closest("a, button, .filter"));
+    });
+    document.addEventListener("pointerleave", () => ring.classList.remove("on"));
+    (function follow() {
+      pos.x += (pos.tx - pos.x) * 0.2;
+      pos.y += (pos.ty - pos.y) * 0.2;
+      ring.style.transform = `translate3d(${pos.x}px, ${pos.y}px, 0)`;
+      requestAnimationFrame(follow);
+    })();
+  }
+
   /* ---------- Scroll-linked scenes ---------- */
   const hero = $(".hero");
   const heroText = $(".hero-text");
@@ -352,7 +404,7 @@
   measure();
   window.addEventListener("load", measure);
 
-  const chipVectors = [[-160, -90, -25], [170, 40, 20], [-90, 150, -15]];
+  const chipVectors = [[-160, -90, -25], [170, 40, 20], [-90, 150, -15], [150, -120, 18]];
 
   function updateScene() {
     const y = scroll.y;

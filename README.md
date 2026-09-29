@@ -16,7 +16,7 @@ python -m http.server 8000
 ## Structure
 
 ```
-index.html              page content (experience, projects, skills, education, contact)
+index.html              page content (experience, projects, lab, skills, education, contact)
 styles.css              theme and layout
 script.js               background animation, typing effect, filters, counters
 assets/profile.png      profile photo

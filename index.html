@@ -28,6 +28,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#lab">Lab</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#education">Education</a></li>
         <li><a href="#contact" class="btn btn-sm btn-ghost">Contact</a></li>
@@ -380,15 +381,282 @@
         </article>
       </div>
 
+    </section>
+
+    <!-- LAB / PERSONAL PROJECTS -->
+    <section class="section" id="lab">
+      <div class="section-head reveal">
+        <span class="eyebrow mono">04 // lab</span>
+        <h2>Built after hours, <span class="gradient-text">in the open.</span></h2>
+        <p class="section-sub">Personal projects from my GitHub. Most started as a question I wanted to answer, from uncertainty-aware dental X-ray detection to a hand-written coding agent.</p>
+      </div>
+
+      <div class="gh-strip glass reveal">
+        <a class="gh-id" href="https://github.com/MuhammadIshaq-AI" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.56-.29-5.25-1.28-5.25-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.23 2.75.11 3.04.74.81 1.19 1.83 1.19 3.09 0 4.41-2.7 5.38-5.27 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+          <span><b>MuhammadIshaq-AI</b><small class="mono">github.com ↗</small></span>
+        </a>
+        <div class="gh-stats">
+          <div><span class="gh-num" data-count="30">0</span><span class="gh-label mono">original repos</span></div>
+          <div><span class="gh-num" data-count="3" data-suffix="+">0</span><span class="gh-label mono">years building in public</span></div>
+          <div><span class="gh-num" data-count="6">0</span><span class="gh-label mono">vision models</span></div>
+        </div>
+        <div class="gh-langs">
+          <div class="lang-bar" aria-hidden="true"><i style="--w:44%;--c:#3572A5"></i><i style="--w:33%;--c:#DA5B0B"></i><i style="--w:11%;--c:#3178c6"></i><i style="--w:12%;--c:#A97BFF"></i></div>
+          <ul class="lang-legend mono">
+            <li><i style="--c:#3572A5"></i>Python 44%</li>
+            <li><i style="--c:#DA5B0B"></i>Jupyter 33%</li>
+            <li><i style="--c:#3178c6"></i>TypeScript 11%</li>
+            <li><i style="--c:#A97BFF"></i>Kotlin · JS · CSS</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="filters reveal" role="tablist">
+        <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter="agents">Agents</button>
+        <button class="filter" data-filter="llm">LLMs &amp; RAG</button>
+        <button class="filter" data-filter="vision">Vision</button>
+        <button class="filter" data-filter="health">Health AI</button>
+      </div>
+
+      <div class="lab-grid">
+        <!-- DENTEX -->
+        <article class="glass repo repo-xl reveal" data-cat="vision health">
+          <div class="repo-visual v-xray" aria-hidden="true">
+            <div class="xray-stage">
+              <div class="jaw jaw-top"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              <div class="jaw jaw-bot"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              <div class="bbox x1"><span class="mono">caries 0.87 ±.04</span></div>
+              <div class="bbox x2"><span class="mono">impacted 0.93</span></div>
+              <div class="bbox x3"><span class="mono">lesion 0.71</span></div>
+            </div>
+            <div class="scanline"></div>
+            <span class="live-badge mono"><span class="pulse"></span>live demo</span>
+          </div>
+          <div class="repo-body">
+            <div class="repo-top mono"><span class="repo-path">~/dentex-tooth-detection</span><span class="repo-lang"><i style="--c:#3572A5"></i>Python</span></div>
+            <h3>DENTEX: Uncertainty-Aware Dental X-ray Diagnosis</h3>
+            <p>Fine-tuned <strong>YOLO26</strong> on panoramic X-rays to detect caries, deep caries, periapical lesions and impacted teeth. Most detectors report a single confidence score, so I added <strong>Platt calibration, conformal guarantees and MC-dropout uncertainty</strong>. Impacted teeth reach 0.90 AP50. It's served on Vercel with FastAPI and ONNX Runtime.</p>
+            <div class="pills"><span>YOLO26</span><span>Conformal Prediction</span><span>MC-Dropout</span><span>ONNX</span><span>FastAPI</span></div>
+            <div class="repo-links">
+              <a class="btn btn-primary btn-sm" href="https://dentex-tooth-detection.vercel.app" target="_blank" rel="noopener">Try it live ↗</a>
+              <a class="btn btn-ghost btn-sm" href="https://github.com/MuhammadIshaq-AI/dentex-tooth-detection" target="_blank" rel="noopener">Source</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Agentic Workspace -->
+        <article class="glass repo repo-tall reveal" data-cat="agents">
+          <div class="repo-visual v-term mono" aria-hidden="true">
+            <div class="terminal-bar"><i></i><i></i><i></i><span>agent@workspace</span></div>
+            <div class="term-lines">
+              <p><b>›</b> fix the failing test</p>
+              <p class="tool">⚙ read_file("tests/test_api.py")</p>
+              <p class="tool">⚙ grep("def parse_")</p>
+              <p class="tool">⚙ edit_file(api.py, +3 −1)</p>
+              <p class="ask">? run `pytest`  [y/n] <u>y</u></p>
+              <p class="ok">✓ 24 passed in 1.8s</p>
+            </div>
+          </div>
+          <div class="repo-body">
+            <div class="repo-top mono"><span class="repo-path">~/Agentic-Workspace</span><span class="repo-lang"><i style="--c:#3572A5"></i>Python</span></div>
+            <h3>Agentic Workspace</h3>
+            <p>A terminal coding agent for a single directory. It reads, searches and edits files and runs commands. The agent loop is written by hand on the <strong>Anthropic Messages API</strong> with no framework, so every tool schema and permission check is visible in the code.</p>
+            <div class="pills"><span>Tool Use</span><span>Claude API</span><span>Agent Loop</span></div>
+            <div class="repo-links"><a href="https://github.com/MuhammadIshaq-AI/Agentic-Workspace" target="_blank" rel="noopener">View code ↗</a></div>
+          </div>
+        </article>
+
+        <!-- Oral health RAG -->
+        <article class="glass repo reveal" data-cat="llm health">
+          <div class="repo-visual v-chat" aria-hidden="true">
+            <div class="bubble q">Is whitening safe for sensitive teeth?</div>
+            <div class="bubble a"><i></i><i></i><i class="short"></i><span class="cites mono"><b>[1]</b><b>[2]</b> NHS · WHO</span></div>
+          </div>
+          <div class="repo-body">
+            <div class="repo-top mono"><span class="repo-path">~/oral-health-rag</span><span class="repo-lang"><i style="--c:#3178c6"></i>TypeScript</span></div>
+            <h3>Dental Patient Assistant (RAG)</h3>
+            <p>A chatbot for a dental practice in Islamabad. It answers only from 245 clinic, NHS and WHO passages and <strong>cites every answer</strong>. When the sources don't cover a question, it says so.</p>
+            <div class="pills"><span>Next.js</span><span>Gemini Embeddings</span><span>Vercel</span></div>
+            <div class="repo-links"><a href="https://github.com/MuhammadIshaq-AI/oral-health-rag" target="_blank" rel="noopener">View code ↗</a></div>
+          </div>
+        </article>
+
+        <!-- Vision Lens Android -->
+        <article class="glass repo reveal" data-cat="vision">
+          <div class="repo-visual v-phone" aria-hidden="true">
+            <div class="phone">
+              <div class="phone-cam"><div class="pbox p1"><span class="mono">person</span></div><div class="pbox p2"><span class="mono">cup</span></div></div>
+              <div class="phone-hud mono"><span>30 fps</span><span>12 ms</span></div>
+            </div>
+          </div>
+          <div class="repo-body">
+            <div class="repo-top mono"><span class="repo-path">~/Object-Detection-ML-AP</span><span class="repo-lang"><i style="--c:#A97BFF"></i>Kotlin</span></div>
+            <h3>Vision Lens: On-Device Detection</h3>
+            <p>An Android app that detects 80 object types live from the camera with <strong>EfficientDet-Lite</strong> on LiteRT. It runs fully offline, so no image leaves the phone.</p>
+            <div class="pills"><span>TFLite</span><span>CameraX</span><span>Jetpack Compose</span></div>
+            <div class="repo-links"><a href="https://github.com/MuhammadIshaq-AI/Object-Detection-ML-AP" target="_blank" rel="noopener">View code ↗</a></div>
+          </div>
+        </article>
+
+        <!-- VLM from scratch -->
+        <article class="glass repo reveal" data-cat="vision llm">
+          <div class="repo-visual v-patches" aria-hidden="true">
+            <div class="patch-grid"></div>
+            <span class="patch-label mono">ViT-B · 86M · 12 heads</span>
+          </div>
+          <div class="repo-body">
+            <div class="repo-top mono"><span class="repo-path">~/VLM-Transformers</span><span class="repo-lang"><i style="--c:#DA5B0B"></i>Jupyter</span></div>
+            <h3>Vision-Language Model from Scratch</h3>
+            <p>An 86M-parameter <strong>Vision Transformer</strong> built layer by layer in PyTorch, covering patch embedding, the CLS token and multi-head attention. It includes a Gradio app for captioning, VQA and attention maps.</p>
+            <div class="pills"><span>PyTorch</span><span>ViT</span><span>VQA</span></div>
+            <div class="repo-links"><a href="https://github.com/MuhammadIshaq-AI/VLM-Transformers" target="_blank" rel="noopener">View code ↗</a></div>
+          </div>
+        </article>
+
+        <!-- Serverless RAG -->
+        <article class="glass repo reveal" data-cat="llm">
+          <div class="repo-visual v-flow mono" aria-hidden="true">
+            <span>S3</span><em><b></b></em><span>λ</span><em><b></b></em><span>Pinecone</span><em><b></b></em><span class="hl">Ollama</span>
+          </div>
+          <div class="repo-body">
+            <div class="repo-top mono"><span class="repo-path">~/Serverless-RAG</span><span class="repo-lang"><i style="--c:#3572A5"></i>Python</span></div>
+            <h3>Serverless RAG on AWS</h3>
+            <p>A PDF upload to S3 triggers a Lambda that chunks, embeds and indexes the file into <strong>Pinecone</strong>. Queries go to a self-hosted Ollama model on EC2, which keeps the documents private.</p>
+            <div class="pills"><span>AWS Lambda</span><span>Pinecone</span><span>Ollama</span></div>
+            <div class="repo-links"><a href="https://github.com/MuhammadIshaq-AI/Serverless-RAG" target="_blank" rel="noopener">View code ↗</a></div>
+          </div>
+        </article>
+
+        <!-- Safe City ANPR -->
+        <article class="glass repo reveal" data-cat="vision">
+          <div class="repo-visual v-plate" aria-hidden="true">
+            <div class="plate mono"><span>LEA</span><span>·</span><span>4821</span></div>
+            <span class="plate-read mono">OCR → "LEA-4821" 0.96</span>
+          </div>
+          <div class="repo-body">
+            <div class="repo-top mono"><span class="repo-path">~/Safe-City-Computer-Vision</span><span class="repo-lang"><i style="--c:#3572A5"></i>Python</span></div>
+            <h3>Safe-City License Plate Recognition</h3>
+            <p><strong>YOLO11</strong> plate detection with EasyOCR, plus CLAHE enhancement for low light, glare, rain and motion blur. It outputs annotated traffic video.</p>
+            <div class="pills"><span>YOLO11</span><span>EasyOCR</span><span>OpenCV</span></div>
+            <div class="repo-links"><a href="https://github.com/MuhammadIshaq-AI/Safe-City-Computer-Vision" target="_blank" rel="noopener">View code ↗</a></div>
+          </div>
+        </article>
+
+        <!-- Uni Search -->
+        <article class="glass repo reveal" data-cat="agents">
+          <div class="repo-visual v-toast" aria-hidden="true">
+            <div class="toast"><span class="toast-ico">🎓</span><div><b>3 new scholarships</b><small class="mono">DAAD · EURAXESS · fully funded</small></div></div>
+            <div class="toast ghost"><span class="toast-ico">🔎</span><div><b>Searching the web…</b><small class="mono">gemini · grounded</small></div></div>
+          </div>
+          <div class="repo-body">
+            <div class="repo-top mono"><span class="repo-path">~/Uni-Search-LLM-Agent</span><span class="repo-lang"><i style="--c:#3572A5"></i>Python</span></div>
+            <h3>Scholarship Hunter Agent</h3>
+            <p>An agent that finds fully funded Master's and PhD scholarships in Europe. It combines <strong>Gemini with Google Search grounding</strong> and portal scraping, removes duplicates in SQLite, and sends a notification for each new result.</p>
+            <div class="pills"><span>Gemini</span><span>Streamlit</span><span>SQLite</span></div>
+            <div class="repo-links"><a href="https://github.com/MuhammadIshaq-AI/Uni-Search-LLM-Agent" target="_blank" rel="noopener">View code ↗</a></div>
+          </div>
+        </article>
+
+        <!-- Posture -->
+        <article class="glass repo reveal" data-cat="vision health">
+          <div class="repo-visual v-pose" aria-hidden="true">
+            <svg viewBox="0 0 120 110">
+              <g class="bones"><line x1="52" y1="22" x2="58" y2="44"/><line x1="58" y1="44" x2="64" y2="78"/><line x1="40" y1="46" x2="78" y2="42"/><line x1="40" y1="46" x2="36" y2="72"/><line x1="78" y1="42" x2="86" y2="68"/><line x1="64" y1="78" x2="92" y2="80"/></g>
+              <g class="joints"><circle cx="52" cy="18" r="7"/><circle cx="58" cy="44" r="3"/><circle cx="40" cy="46" r="3"/><circle cx="78" cy="42" r="3"/><circle cx="64" cy="78" r="3"/></g>
+              <path class="angle" d="M58 44 L58 24 M58 30 A 14 14 0 0 0 54 31"/>
+            </svg>
+            <span class="pose-alert mono">⚠ slouch 23°</span>
+          </div>
+          <div class="repo-body">
+            <div class="repo-top mono"><span class="repo-path">~/Posture-Detection-ComputerVision</span><span class="repo-lang"><i style="--c:#3572A5"></i>Python</span></div>
+            <h3>Posture Guardian</h3>
+            <p>Watches your webcam with <strong>MediaPipe Pose</strong> while you work. It flags slouching and uneven shoulders on a live dashboard and plays an alert if bad posture continues.</p>
+            <div class="pills"><span>MediaPipe</span><span>OpenCV</span><span>Flask</span></div>
+            <div class="repo-links"><a href="https://github.com/MuhammadIshaq-AI/Posture-Detection-ComputerVision" target="_blank" rel="noopener">View code ↗</a></div>
+          </div>
+        </article>
+
+        <!-- NHANES -->
+        <article class="glass repo reveal" data-cat="health">
+          <div class="repo-visual v-shap" aria-hidden="true">
+            <div class="shap mono">
+              <p><span>age</span><i style="--v:92%"></i></p>
+              <p><span>smoking</span><i style="--v:74%"></i></p>
+              <p><span>diabetes</span><i style="--v:58%"></i></p>
+              <p><span>income</span><i class="neg" style="--v:41%"></i></p>
+            </div>
+          </div>
+          <div class="repo-body">
+            <div class="repo-top mono"><span class="repo-path">~/nhanes-oral-health-ml</span><span class="repo-lang"><i style="--c:#3572A5"></i>Python</span></div>
+            <h3>Periodontitis Risk, Explained</h3>
+            <p>Interpretable ML on <strong>10,683 NHANES adults</strong> using XGBoost and ordinal models, with SHAP explaining which risk factors matter. The labels match published CDC prevalence to within 0.1%.</p>
+            <div class="pills"><span>XGBoost</span><span>SHAP</span><span>Epidemiology</span></div>
+            <div class="repo-links"><a href="https://github.com/MuhammadIshaq-AI/nhanes-oral-health-ml" target="_blank" rel="noopener">View code ↗</a></div>
+          </div>
+        </article>
+
+        <!-- Multilingual NIM -->
+        <article class="glass repo reveal" data-cat="llm">
+          <div class="repo-visual v-lang" aria-hidden="true">
+            <span class="w1">Hello</span><span class="w2">سلام</span><span class="w3">Bonjour</span><span class="w4">你好</span><span class="w5">Hola</span><span class="w6">नमस्ते</span>
+          </div>
+          <div class="repo-body">
+            <div class="repo-top mono"><span class="repo-path">~/Multilingual-LLM-s</span><span class="repo-lang"><i style="--c:#3178c6"></i>TypeScript</span></div>
+            <h3>Multilingual NIM Studio</h3>
+            <p>A Next.js app for multimodal chat and image generation on <strong>NVIDIA NIM</strong> models. API keys stay on the server, Redis handles rate limiting, and it ships as a Docker image.</p>
+            <div class="pills"><span>NVIDIA NIM</span><span>Next.js</span><span>Redis</span></div>
+            <div class="repo-links"><a href="https://github.com/MuhammadIshaq-AI/Multilingual-LLM-s" target="_blank" rel="noopener">View code ↗</a></div>
+          </div>
+        </article>
+
+        <!-- Transcription -->
+        <article class="glass repo reveal" data-cat="llm">
+          <div class="repo-visual v-wave-ts" aria-hidden="true">
+            <div class="visual-wave"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+            <div class="ts mono"><span>00:03.2</span> "let's get started…"</div>
+          </div>
+          <div class="repo-body">
+            <div class="repo-top mono"><span class="repo-path">~/transcription-service</span><span class="repo-lang"><i style="--c:#3572A5"></i>Python</span></div>
+            <h3>Transcription Service</h3>
+            <p>A FastAPI service that turns audio into timestamped segments. It supports async jobs for long files and can switch to <strong>faster-whisper</strong> with one environment variable.</p>
+            <div class="pills"><span>FastAPI</span><span>Whisper</span><span>ffmpeg</span></div>
+            <div class="repo-links"><a href="https://github.com/MuhammadIshaq-AI/transcription-service" target="_blank" rel="noopener">View code ↗</a></div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Compact archive -->
+      <details class="archive glass reveal">
+        <summary>
+          <span class="mono"><b>$</b> ls ~/more-experiments</span>
+          <span class="archive-count mono">11 repos <i aria-hidden="true">▾</i></span>
+        </summary>
+        <ul class="archive-list">
+          <li><a href="https://github.com/MuhammadIshaq-AI/LLM-Finetuning" target="_blank" rel="noopener"><span class="mono">LLM-Finetuning</span><em>Fine-tune a pretrained LLM on a custom dataset so it learns something new</em><i style="--c:#DA5B0B"></i></a></li>
+          <li><a href="https://github.com/MuhammadIshaq-AI/langgraph-agents" target="_blank" rel="noopener"><span class="mono">langgraph-agents</span><em>A collection of LangGraph agent patterns</em><i style="--c:#DA5B0B"></i></a></li>
+          <li><a href="https://github.com/MuhammadIshaq-AI/MCP-Powered-Ollama-Agent" target="_blank" rel="noopener"><span class="mono">MCP-Powered-Ollama-Agent</span><em>Local agent with Ollama and FastMCP that queries your own database</em><i style="--c:#DA5B0B"></i></a></li>
+          <li><a href="https://github.com/MuhammadIshaq-AI/Ollama-Ec2-Coding-Agent" target="_blank" rel="noopener"><span class="mono">Ollama-Ec2-Coding-Agent</span><em>FastAPI endpoint for a self-hosted Ollama coding agent on EC2</em><i style="--c:#3572A5"></i></a></li>
+          <li><a href="https://github.com/MuhammadIshaq-AI/AirLLM" target="_blank" rel="noopener"><span class="mono">AirLLM</span><em>Running large language models on Colab with minimal GPU memory</em><i style="--c:#DA5B0B"></i></a></li>
+          <li><a href="https://github.com/MuhammadIshaq-AI/kafka-llm-pipeline" target="_blank" rel="noopener"><span class="mono">kafka-llm-pipeline</span><em>Apache Kafka queues in front of a RAG system</em><i style="--c:#3572A5"></i></a></li>
+          <li><a href="https://github.com/MuhammadIshaq-AI/n8n-workflows" target="_blank" rel="noopener"><span class="mono">n8n-workflows</span><em>AI automation workflows for n8n</em><i style="--c:#8b949e"></i></a></li>
+          <li><a href="https://github.com/MuhammadIshaq-AI/AWS-Serverless-AI-System-Designs" target="_blank" rel="noopener"><span class="mono">AWS-Serverless-AI-System-Designs</span><em>System designs for AI infrastructure on AWS</em><i style="--c:#8b949e"></i></a></li>
+          <li><a href="https://github.com/MuhammadIshaq-AI/Amazon-SageMaker-Notebooks" target="_blank" rel="noopener"><span class="mono">Amazon-SageMaker-Notebooks</span><em>Training and evaluating ML models from scratch on SageMaker</em><i style="--c:#DA5B0B"></i></a></li>
+          <li><a href="https://github.com/MuhammadIshaq-AI/fine-tuning-gpt-2" target="_blank" rel="noopener"><span class="mono">fine-tuning-gpt-2</span><em>GPT-2 sequence classification fine-tuned on IMDB</em><i style="--c:#DA5B0B"></i></a></li>
+          <li><a href="https://github.com/MuhammadIshaq-AI/Vision-Detection-App" target="_blank" rel="noopener"><span class="mono">Vision-Detection-App</span><em>Installable PWA that captions photos with Gemini vision</em><i style="--c:#3178c6"></i></a></li>
+        </ul>
+      </details>
+
       <div class="more reveal">
-        <a href="https://github.com/MuhammadIshaq-AI" target="_blank" rel="noopener" class="btn btn-ghost">More on GitHub ↗</a>
+        <a href="https://github.com/MuhammadIshaq-AI?tab=repositories" target="_blank" rel="noopener" class="btn btn-ghost">All repositories on GitHub ↗</a>
       </div>
     </section>
 
     <!-- SKILLS -->
     <section class="section" id="skills">
       <div class="section-head reveal">
-        <span class="eyebrow mono">04 // stack</span>
+        <span class="eyebrow mono">05 // stack</span>
         <h2>Tools of the <span class="gradient-text">trade.</span></h2>
       </div>
       <div class="skills-grid">
@@ -418,7 +686,7 @@
     <!-- EDUCATION & CERTS -->
     <section class="section" id="education">
       <div class="section-head reveal">
-        <span class="eyebrow mono">05 // education</span>
+        <span class="eyebrow mono">06 // education</span>
         <h2>Learning, <span class="gradient-text">always.</span></h2>
       </div>
       <div class="edu-grid">
@@ -450,7 +718,7 @@
     <!-- CONTACT -->
     <section class="section contact" id="contact">
       <div class="glass contact-card reveal">
-        <span class="eyebrow mono">06 // contact</span>
+        <span class="eyebrow mono">07 // contact</span>
         <h2>Let's build something <span class="gradient-text">intelligent.</span></h2>
         <p>Have a GenAI product, a RAG system that needs to be faster, or a vision problem to solve? My inbox is open.</p>
         <a href="mailto:ishaqjan619@gmail.com" class="btn btn-primary btn-lg">ishaqjan619@gmail.com</a>

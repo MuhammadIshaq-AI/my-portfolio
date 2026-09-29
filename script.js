@@ -150,7 +150,7 @@
   const sectionLinks = [...links.querySelectorAll('a[href^="#"]')];
 
   /* ---------- Scroll HUD (side progress dots) ---------- */
-  const hudLabels = { home: "home", about: "about", experience: "experience", projects: "projects", skills: "stack", education: "education", contact: "contact" };
+  const hudLabels = { home: "home", about: "about", experience: "experience", projects: "projects", lab: "lab", skills: "stack", education: "education", contact: "contact" };
   const hud = document.createElement("nav");
   hud.className = "scroll-hud";
   hud.setAttribute("aria-label", "Section progress");
@@ -245,9 +245,23 @@
     })(start);
   }
 
+  /* ---------- ViT patch grid: warmer cells cluster near the "subject" ---------- */
+  $$(".patch-grid").forEach((grid) => {
+    const cols = 12, rows = 6;
+    for (let i = 0; i < cols * rows; i++) {
+      const x = i % cols, y = (i / cols) | 0;
+      const d = Math.hypot((x - 6.5) / 4, (y - 2.8) / 2.4);
+      const cell = document.createElement("i");
+      cell.style.setProperty("--a", Math.max(0.06, 0.75 - d * 0.5 + Math.random() * 0.12).toFixed(2));
+      cell.style.setProperty("--dl", `${(d * 0.45).toFixed(2)}s`);
+      grid.appendChild(cell);
+    }
+  });
+
   /* ---------- Assign animation styles + stagger ---------- */
   const animMap = [
     [".project", "tilt"],
+    [".repo", "tilt"],
     [".tl-item", "side"],
     [".skill-card", "flip"],
     [".stat", "pop"],
@@ -273,14 +287,15 @@
     el.classList.add("visible");
     const eb = $(".eyebrow", el);
     if (eb) scramble(eb);
-    const num = $("[data-count]", el);
-    if (num) animateCount(num);
+    $$("[data-count]", el).forEach(animateCount);
   }
   function leave(el, above) {
     el.classList.toggle("from-top", above);
     el.classList.remove("visible");
-    const num = $("[data-count]", el);
-    if (num) { cancelAnimationFrame(num._cnt); num.textContent = "0" + (num.dataset.suffix || ""); }
+    $$("[data-count]", el).forEach((num) => {
+      cancelAnimationFrame(num._cnt);
+      num.textContent = "0" + (num.dataset.suffix || "");
+    });
   }
 
   if (reduceMotion) {
@@ -300,24 +315,29 @@
     reveals.forEach((el) => revealer.observe(el));
   }
 
-  /* ---------- Project filters ---------- */
-  const filters = $$(".filter");
-  const projects = $$(".project");
-  filters.forEach((btn) =>
-    btn.addEventListener("click", () => {
-      filters.forEach((b) => b.classList.remove("active"));
-      btn.classList.add("active");
-      const f = btn.dataset.filter;
-      projects.forEach((p) => {
-        const show = f === "all" || p.dataset.cat === f;
-        p.classList.toggle("hidden", !show);
-        if (show) enter(p);
-      });
-    })
-  );
+  /* ---------- Project + lab filters (cards may carry several categories) ---------- */
+  function setupFilters(section, cardSel) {
+    const filters = $$(".filter", section);
+    const cards = $$(cardSel, section);
+    filters.forEach((btn) =>
+      btn.addEventListener("click", () => {
+        filters.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        const f = btn.dataset.filter;
+        cards.forEach((p) => {
+          const show = f === "all" || p.dataset.cat.split(" ").includes(f);
+          p.classList.toggle("hidden", !show);
+          if (show) enter(p);
+        });
+      })
+    );
+    return cards;
+  }
+  const projects = setupFilters($("#projects"), ".project");
+  const repos = setupFilters($("#lab"), ".repo");
 
   /* ---------- Card spotlight ---------- */
-  projects.forEach((card) =>
+  [...projects, ...repos].forEach((card) =>
     card.addEventListener("pointermove", (e) => {
       const rect = card.getBoundingClientRect();
       card.style.setProperty("--mx", `${e.clientX - rect.left}px`);
@@ -328,9 +348,9 @@
   /* ---------- Pointer niceties: tilt, magnetic buttons, cursor ring ---------- */
   const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
   if (finePointer && !reduceMotion) {
-    $$(".project, .skill-card, .stat").forEach((card) => {
+    $$(".project, .repo, .skill-card, .stat").forEach((card) => {
       card.classList.add("tilt");
-      const max = card.classList.contains("featured") ? 3 : 7;
+      const max = card.matches(".featured, .repo-xl") ? 3 : 7;
       card.addEventListener("pointermove", (e) => {
         const r = card.getBoundingClientRect();
         const px = (e.clientX - r.left) / r.width - 0.5;
